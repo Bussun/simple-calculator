@@ -1,5 +1,6 @@
 const buttons = document.querySelectorAll('.btn');
 const display = document.querySelector('.text');
+const operatorDisplay = document.querySelector('.operator-display');
 let num1 = undefined, num2 = undefined, result = undefined, operator = undefined;
 
 resetCalc();
@@ -35,7 +36,26 @@ function process(e) {
     case classListofBtn.contains('operators'):
       //if (this.name == '=') break;
       if (num1 == undefined && result != 0 && result != undefined) num1 = result;
+      if (num1 == undefined && result == undefined) break;
+      if (num2 != undefined) operate();
       operator = this.name;
+      switch (operator) {
+        case '+':
+          operatorDisplay.textContent = '+';
+          break;
+        case '-':
+          operatorDisplay.textContent = '-';
+          break;
+        case '*':
+          operatorDisplay.textContent = '×';
+          break;
+        case '/':
+          operatorDisplay.textContent = '÷';
+          break;
+        case '**':
+          operatorDisplay.innerHTML = '𝑥<sup>𝑛</sup>';
+          break;
+      }
       break;
 
     case classListofBtn.contains('equal'):
@@ -106,6 +126,7 @@ function resetVars() {
   num1 = undefined;
   num2 = undefined;
   operator = undefined;
+  operatorDisplay.innerHTML = '';
 }
 
 function resetCalc() {
@@ -114,6 +135,7 @@ function resetCalc() {
   result = undefined;
   operator = undefined;
   display.textContent = '0';
+  operatorDisplay.innerHTML = '';
 }
 
 function easterEgg() {
