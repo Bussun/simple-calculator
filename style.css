@@ -128,3 +128,8 @@ body {
 .reset {
 	grid-area: reset;
 }
+
+.equal {
+	background-color: orange;
+	grid-area: equal;
+}
