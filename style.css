@@ -3,6 +3,7 @@
 * {
 	border: 2px solid red;
 	font-family: 'Quicksand', sans-serif;
+	margin: 0;
 }
 
 body {
@@ -16,6 +17,7 @@ body {
 .calc {
 	display: flex;
 	flex-direction: column;
+	width: 500px;
 }
 
 .display {
@@ -23,15 +25,18 @@ body {
 	width: auto;
 }
 
+.text {
+
+}
+
 .buttons {
 	display: grid;
-	grid-template-columns: repeat(4, '1fr');
-	grid-template-rows: repeat(4, '1fr');
 	grid-template-areas:
-	"seven eight nine divide"
-	"four five six multiply"
-	"one two three substract"
-	"zero dot equal add";
+	"reset backspace power divide"
+	"seven eight nine multiply"
+	"four five six substract"
+	"one two three add"
+	"zero dot dot equal";
 }
 
 .btn {
@@ -96,4 +101,16 @@ body {
 
 .divide {
 	grid-area: divide;
+}
+
+.power {
+	grid-area: power;
+}
+
+.backspace {
+	grid-area: backspace;
+}
+
+.reset {
+	grid-area: reset;
 }
