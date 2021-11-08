@@ -2,6 +2,8 @@ const buttons = document.querySelectorAll('.btn');
 const display = document.querySelector('.text');
 let num1 = undefined, num2 = undefined, result = undefined, operator = undefined;
 
+resetCalc();
+
 buttons.forEach(button => button.addEventListener('click', process));
 
 
@@ -36,9 +38,10 @@ function process(e) {
 
     case classListofBtn.contains('equal'):
       if (num2 == undefined) break;
+      console.log('Operator: ' + operator);
       switch (operator) {
         case '+':
-          reault = add(+num1, +num2);
+          result = add(+num1, +num2);
           resetVars();
           display.textContent = result;
           break;
@@ -64,8 +67,15 @@ function process(e) {
         case '/':
           if (+num2 == 0) textContent.display = 'Can\'t divide by 0';
           result = divide(num1, num2);
+          resetVars();
           display.textContent = result;
+          break;
+
+        default:
+          display.textContent = 'Something went wrong';
+          break;
       }
+      break;
 
     case classListofBtn.contains('reset'):
       resetCalc();
@@ -74,7 +84,7 @@ function process(e) {
     case classListofBtn.contains('backspace'):
       break;
   }
-  console.log(result);
+  console.log('Result: ' + result);
 }
 
 function roundNumber(num) {
@@ -94,5 +104,3 @@ function resetCalc() {
   operator = undefined;
   display.textContent = '0';
 }
-
-resetCalc();

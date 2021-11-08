@@ -23,10 +23,15 @@ body {
 .display {
 	height: 150px;
 	width: auto;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding-right: 35px;
 }
 
 .text {
-
+	font-size: 80px;
+	font-weight: 700;
 }
 
 .buttons {
@@ -48,7 +53,8 @@ body {
 	background-color: hsl(0, 0%, 85%);
 }
 
-.btn.operators {
+.btn.operators,
+.btn.tools {
 	background-color: orange;
 }
 
@@ -130,6 +136,5 @@ body {
 }
 
 .equal {
-	background-color: orange;
 	grid-area: equal;
 }
