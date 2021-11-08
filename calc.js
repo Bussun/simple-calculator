@@ -102,6 +102,7 @@ function operate() {
         break;
       }
       result = divide(num1, num2);
+      result = roundNumber(result);
       resetVars();
       display.textContent = result;
       break;
