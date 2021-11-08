@@ -16,7 +16,7 @@ const divide = (a, b) => (b !=0) ? a / b : easterEgg();
 const power = (x, n) => Math.pow(x, n);
 
 
-function process(e) {
+function process() {
   let classListofBtn = this.classList;
   switch (true) {
     case classListofBtn.contains('number'):
@@ -57,6 +57,13 @@ function process(e) {
       break;
 
     case classListofBtn.contains('backspace'):
+      if (num2 == undefined) {
+        num1 = num1.slice(0, num1.length-1);
+        display.textContent = num1;
+        break;
+      }
+      num2 = num2.slice(0, num2.length-1);
+      display.textContent = num2;
       break;
   }
   console.log('Result: ' + result);
