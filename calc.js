@@ -66,11 +66,9 @@ function process() {
       display.textContent = num2;
       break;
   }
-  console.log('Result: ' + result);
 }
 
 function operate() {
-  console.log('Operator: ' + operator);
   switch (operator) {
     case '+':
       result = add(+num1, +num2);

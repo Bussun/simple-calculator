@@ -10,9 +10,11 @@ body {
 	height: 100vh;
 	margin: 0;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	align-content: center;
+	gap: 20px;
 }
 
 .calc {
@@ -133,4 +135,10 @@ body {
 
 .equal {
 	grid-area: equal;
+}
+
+.footer {
+	display: flex;
+	justify-content: center;
+	color: white;
 }
