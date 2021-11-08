@@ -14,3 +14,6 @@ Live demo: [on GitHub Pages](https://bussun.github.io/simple-calculator)
 
 ## Issues
  If you find any bug, please open an issue in this repository
+ 
+### Known issues
+ - Too large numbers overflow
