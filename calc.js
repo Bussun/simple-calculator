@@ -34,28 +34,17 @@ function process(e) {
       break;
 
     case classListofBtn.contains('operators'):
-      //if (this.name == '=') break;
       if (num1 == undefined && result != 0 && result != undefined) num1 = result;
       if (num1 == undefined && result == undefined) break;
-      if (num2 != undefined) operate();
-      operator = this.name;
-      switch (operator) {
-        case '+':
-          operatorDisplay.textContent = '+';
-          break;
-        case '-':
-          operatorDisplay.textContent = '-';
-          break;
-        case '*':
-          operatorDisplay.textContent = '×';
-          break;
-        case '/':
-          operatorDisplay.textContent = '÷';
-          break;
-        case '**':
-          operatorDisplay.innerHTML = '𝑥<sup>𝑛</sup>';
-          break;
+      if (num2 != undefined) {
+        operate();
+        operator = this.name;
+        setOperatorDisplay();
+        num1 = result;
+        break;
       }
+      operator = this.name;
+      setOperatorDisplay();
       break;
 
     case classListofBtn.contains('equal'):
@@ -122,6 +111,26 @@ function roundNumber(num) {
   return Number.parseFloat(num).toFixed(2);
 }
 
+function setOperatorDisplay() {
+  switch (operator) {
+    case '+':
+      operatorDisplay.textContent = '+';
+      break;
+    case '-':
+      operatorDisplay.textContent = '-';
+      break;
+    case '*':
+      operatorDisplay.textContent = '×';
+      break;
+    case '/':
+      operatorDisplay.textContent = '÷';
+      break;
+    case '**':
+      operatorDisplay.innerHTML = '𝑥<sup>𝑛</sup>';
+      break;
+  }
+}
+
 function resetVars() {
   num1 = undefined;
   num2 = undefined;
@@ -141,5 +150,5 @@ function resetCalc() {
 function easterEgg() {
   buttons.forEach(button => button.textContent = '0');
   display.style.fontSize = '15px';
-  display.textContent = 'You like 0, don\'t you ? Now you need to reaload the page to continue';
+  display.textContent = 'You like 0, don\'t you ? (Reload to continue.)';
 }
