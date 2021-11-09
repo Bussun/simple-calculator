@@ -23,11 +23,13 @@ function process() {
       if (operator == undefined) {
         if (num1 == undefined) num1 = '';
         if (this.name == '.' && num1.includes('.')) break;
+        if (num1.length >= 9) break;
         num1 += this.name;
         display.textContent = num1;
       } else {
         if (num2 == undefined) num2 = '';
         if (this.name == '.' && num2.includes('.')) break;
+        if (num2.length >= 9) break;
         num2 += this.name;
         display.textContent = num2;
       }
@@ -71,25 +73,25 @@ function process() {
 function operate() {
   switch (operator) {
     case '+':
-      result = add(+num1, +num2);
+      result = roundNumber(add(+num1, +num2));
       resetVars();
       display.textContent = result;
       break;
 
     case '-':
-      result = substract(+num1, +num2);
+      result = roundNumber(substract(+num1, +num2));
       resetVars();
       display.textContent = result;
       break;
 
     case '*':
-      result = multiply(+num1, +num2);
+      result = roundNumber(multiply(+num1, +num2));
       resetVars();
       display.textContent = result;
       break;
 
     case '**':
-      result = power(+num1, +num2);
+      result = roundNumber(power(+num1, +num2));
       resetVars();
       display.textContent = result;
       break;
@@ -101,8 +103,8 @@ function operate() {
         resetVars();
         break;
       }
-      result = divide(num1, num2);
-      result = roundNumber(result);
+      result = roundNumber(divide(num1, num2));
+      //result = roundNumber(result);
       resetVars();
       display.textContent = result;
       break;
@@ -114,7 +116,9 @@ function operate() {
 }
 
 function roundNumber(num) {
-  return Number.parseFloat(num).toFixed(2);
+  if (num % 1 != 0) return Number.parseFloat(num).toFixed(2);
+  else if (num > 100000) return Number.parseFloat(num).toExponential(2);
+  else return num;
 }
 
 function setOperatorDisplay() {
