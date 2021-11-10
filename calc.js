@@ -1,7 +1,7 @@
 const buttons = document.querySelectorAll('.btn');
 const display = document.querySelector('.text');
 const operatorDisplay = document.querySelector('.operator-display');
-let num1 = undefined, num2 = undefined, result = undefined, operator = undefined;
+let num1 = undefined, num2 = undefined, result = undefined, operator = undefined, illegalOperation = false;
 
 resetCalc();
 
@@ -40,6 +40,10 @@ function process() {
       if (num1 == undefined && result == undefined) break;
       if (num2 != undefined) {
         operate();
+        if (illegalOperation) {
+          illegalOperation = false;
+          break;
+        }
         operator = this.name;
         setOperatorDisplay();
         num1 = result;
@@ -101,6 +105,7 @@ function operate() {
         display.textContent = 'Nice try';
         result = undefined;
         resetVars();
+        illegalOperation = true;
         break;
       }
       result = roundNumber(divide(num1, num2));
