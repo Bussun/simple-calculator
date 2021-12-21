@@ -37,6 +37,12 @@ function process() {
 
     case classListofBtn.contains('operators'):
       if (num1 == undefined && result != 0 && result != undefined) num1 = result;
+      if (num1 == undefined && num2 == undefined && result == undefined && classListofBtn.contains('substract')) {
+        num1 = 0;
+        operator = this.name;
+        setOperatorDisplay();
+        break;
+      }
       if (num1 == undefined && result == undefined) break;
       if (num2 != undefined) {
         operate();
