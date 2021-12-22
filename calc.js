@@ -30,7 +30,6 @@ function processKey(key) {
     case '8': 
     case '9':
     case '0':
-      console.log(key);
       if (operator == undefined) {
         if (num1 == undefined) num1 = '';
         if (this.name == '.' && num1.includes('.')) break;
@@ -51,7 +50,6 @@ function processKey(key) {
     case '*': 
     case '/':
     case '^':
-      console.log(key);
       if (num1 == undefined && result != 0 && result != undefined)
         num1 = result;
       if (
