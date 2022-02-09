@@ -1,7 +1,7 @@
 # simple-calculator
 A calculator written in JavaScript with a GUI
 
-Live demo: [on GitHub Pages](https://bussun.github.io/simple-calculator)
+Live demo: [on my website](https://bussun.dev/projects/simple-calculator)
 ## Features
  - Supports all four basic operations and exponents
  - Negative numbers supported
