@@ -53,6 +53,8 @@ body {
 	"four five six substract"
 	"one two three add"
 	"zero dot equal equal";
+	grid-auto-rows: 1fr;
+	grid-auto-columns: 1fr;
 }
 
 .btn {
@@ -86,7 +88,7 @@ body {
 }
 
 .five {
-	grid-area: five:
+	grid-area: five;
 }
 
 .six {
