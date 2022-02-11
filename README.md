@@ -1,5 +1,5 @@
 # simple-calculator
-A calculator written in JavaScript with a GUI
+A calculator written in JavaScript with a GUI.
 
 Live demo: [on my website](https://bussun.dev/projects/simple-calculator)
 ## Features
